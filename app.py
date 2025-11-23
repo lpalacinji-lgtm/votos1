@@ -99,22 +99,7 @@ if st.session_state.fase == "formulario":
         else:
             st.warning("Documento no encontrado.")
 
-
-
-# -------------------------------
-# FASE 2: NUEVO REGISTRO
-# -------------------------------
-elif st.session_state.fase == "nuevo_registro":
-    st.title("📝 Registrar nuevo usuario")
-
-    documento = st.session_state.get("nuevo_documento", "")
-    st.text_input("Documento", value=documento, disabled=True)
-
-    nombre = st.text_input("Nombre completo")
-    celular = st.text_input("Celular")            if st.button("Registrar nuevo usuario"):
-                st.session_state.nuevo_documento = str(documento)
-                st.session_state.fase = "nuevo_registro"
-                st.rerun()
+            
 
     if st.button("Guardar nuevo usuario"):
         if nombre.strip() == "" or celular.strip() == "":
@@ -357,6 +342,7 @@ elif st.session_state.fase == "confirmar":
         st.session_state.mesa = ""
         st.experimental_set_query_params()
         st.rerun()
+
 
 
 
