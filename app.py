@@ -96,13 +96,13 @@ if st.session_state.fase == "formulario":
                 st.rerun()
 
         # Si NO existe
-        else:
-            st.warning("Documento no encontrado.")
+        #else:
+            #st.warning("Documento no encontrado.")
 
-            if st.button("Registrar nuevo usuario"):
-                st.session_state.nuevo_documento = str(documento)
-                st.session_state.fase = "nuevo_registro"
-                st.rerun()
+            #if st.button("Registrar nuevo usuario"):
+                #st.session_state.nuevo_documento = str(documento)
+                #st.session_state.fase = "nuevo_registro"
+               # st.rerun()
 
 # -------------------------------
 # FASE 2: NUEVO REGISTRO
@@ -357,3 +357,4 @@ elif st.session_state.fase == "confirmar":
         st.session_state.mesa = ""
         st.experimental_set_query_params()
         st.rerun()
+
